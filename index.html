@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRENSA TRAP — El Medio del Trap Chileno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFEF00;
+    --magenta: #CC00FF;
+    --black: #0a0a0a;
+    --dark: #111111;
+    --gray: #1a1a1a;
+    --gray2: #222222;
+    --white: #ffffff;
+    --text-muted: #888888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,10,10,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,239,0,0.15);
+    padding: 0 2rem; height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--yellow); letter-spacing: 2px; text-decoration: none; }
+  .nav-links { display: flex; gap: 0; list-style: none; }
+  .nav-links a { color: var(--white); text-decoration: none; font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.5rem 0.8rem; transition: color 0.2s; opacity: 0.65; }
+  .nav-links a:hover { color: var(--yellow); opacity: 1; }
+  .nav-cta { background: var(--yellow); color: var(--black) !important; padding: 0.4rem 1rem !important; opacity: 1 !important; font-weight: 700 !important; }
+  @media(max-width:768px){ .nav-links { display: none; } }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 2rem; padding-bottom: 5rem;
+    position: relative; overflow: hidden; background: var(--black);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(204,0,255,0.09) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(255,239,0,0.06) 0%, transparent 60%);
+  }
+  .hero-ticker {
+    position: absolute; top: 60px; left: 0; right: 0; overflow: hidden;
+    border-top: 1px solid rgba(255,239,0,0.15); border-bottom: 1px solid rgba(255,239,0,0.15);
+    padding: 7px 0; background: rgba(255,239,0,0.02);
+  }
+  .ticker-inner { display: flex; gap: 2.5rem; animation: ticker 28s linear infinite; white-space: nowrap; }
+  .ticker-inner span { font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 2px; color: var(--yellow); opacity: 0.75; }
+  .ticker-sep { color: var(--magenta) !important; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .hero-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--magenta); margin-bottom: 1rem; position: relative; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 13vw, 11rem); line-height: 0.87; letter-spacing: -1px; color: var(--white); position: relative; }
+  .hero-title .accent { color: var(--yellow); }
+  .hero-title .outline { -webkit-text-stroke: 2px var(--white); color: transparent; }
+  .hero-sub { margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted); max-width: 480px; line-height: 1.65; position: relative; }
+  .hero-actions { margin-top: 2rem; display: flex; gap: 1rem; align-items: center; position: relative; }
+  .btn-primary { background: var(--yellow); color: var(--black); padding: 0.8rem 2rem; font-weight: 700; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,239,0,0.28); }
+  .btn-ghost { color: var(--white); font-size: 0.78rem; letter-spacing: 1px; text-decoration: none; opacity: 0.55; transition: opacity 0.2s; }
+  .btn-ghost:hover { opacity: 1; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 1rem; flex-wrap: wrap; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 2px; line-height: 1; }
+  .section-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: var(--yellow); color: var(--black); padding: 3px 8px; }
+  .section-tag.mg { background: var(--magenta); color: var(--white); }
+  .live-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--white); background: #e00; padding: 3px 8px; }
+  .live-dot { width: 5px; height: 5px; background: var(--white); border-radius: 50%; animation: pulse 1.2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .pt-divider { height: 1px; background: linear-gradient(to right, transparent, rgba(255,239,0,0.25), transparent); }
+
+  /* PROMPT BOX */
+  .prompt-box { background: rgba(255,239,0,0.04); border: 1px solid rgba(255,239,0,0.12); padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; display: flex; align-items: flex-start; gap: 1.5rem; }
+  .prompt-box-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 2px; color: var(--yellow); text-transform: uppercase; white-space: nowrap; margin-top: 2px; }
+  .prompt-box-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+  .prompt-box-text code { background: rgba(255,239,0,0.1); color: var(--yellow); padding: 1px 6px; font-size: 0.76rem; font-family: monospace; }
+
+  /* NOTICIAS */
+  #noticias { background: var(--black); }
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: rgba(255,255,255,0.05); }
+  .news-card { background: var(--black); overflow: hidden; cursor: pointer; transition: background 0.2s; display: flex; flex-direction: column; }
+  .news-card:hover { background: #111; }
+  .news-card-img-ph {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .news-card-img-ph::after { content: 'PT'; font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(255,239,0,0.1); letter-spacing: 5px; }
+  .cat-badge { position: absolute; top: 0.75rem; left: 0.75rem; font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: var(--yellow); color: var(--black); padding: 2px 7px; }
+  .news-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.7rem; }
+  .news-card-meta { font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--magenta); font-weight: 600; }
+  .news-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; line-height: 1.1; letter-spacing: 0.5px; }
+  .news-card-excerpt { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+  .news-card-footer { display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); }
+  .read-more { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); text-decoration: none; }
+  .ig-tag { font-size: 0.62rem; color: var(--text-muted); }
+  .embed-ph { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; color: var(--text-muted); margin-top: 0.5rem; }
+  .embed-icon { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+
+  /* GALERÍA */
+  #galeria { background: var(--dark); }
+  .gallery-grid { columns: 3; column-gap: 4px; }
+  @media(max-width:768px){ .gallery-grid { columns: 2; } }
+  .gallery-item { break-inside: avoid; margin-bottom: 4px; position: relative; overflow: hidden; cursor: pointer; }
+  .gallery-ph { width: 100%; background: linear-gradient(150deg, #1c1c1c, #101010); display: flex; align-items: center; justify-content: center; position: relative; }
+  .gallery-ph-text { font-family: 'Bebas Neue', sans-serif; color: rgba(255,239,0,0.15); font-size: 0.8rem; letter-spacing: 2px; text-align: center; padding: 1rem; }
+  .gallery-item:hover .gallery-ov { opacity: 1; }
+  .gallery-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 55%); display: flex; align-items: flex-end; padding: 0.75rem; opacity: 0; transition: opacity 0.3s; }
+  .gallery-ov-text { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 1px; }
+
+  /* VIDEOS */
+  #videos { background: var(--black); }
+  .videos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .video-card { background: var(--gray); overflow: hidden; cursor: pointer; transition: transform 0.25s; }
+  .video-card:hover { transform: scale(1.02); }
+  .video-thumb { aspect-ratio: 16/9; background: var(--gray2); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .video-thumb-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1a1a, #0f0f0f); }
+  .play-btn { width: 50px; height: 50px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; transition: transform 0.2s; }
+  .video-card:hover .play-btn { transform: scale(1.1); }
+  .play-btn::after { content: ''; border-left: 17px solid var(--black); border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
+  .video-info { padding: 1rem; }
+  .video-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
+  .video-meta { font-size: 0.68rem; color: var(--text-muted); }
+
+  /* REELS */
+  #reels { background: var(--dark); }
+  .reels-scroll { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 1rem; scrollbar-width: thin; scrollbar-color: var(--yellow) transparent; }
+  .reels-scroll::-webkit-scrollbar { height: 3px; }
+  .reels-scroll::-webkit-scrollbar-thumb { background: var(--yellow); }
+  .reel-card { flex: 0 0 170px; aspect-ratio: 9/16; background: var(--gray2); position: relative; overflow: hidden; cursor: pointer; transition: transform 0.25s; display: flex; align-items: center; justify-content: center; }
+  .reel-card:hover { transform: scale(1.04); }
+  .reel-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #1e1e1e, #0a0a0a); }
+  .reel-play { width: 38px; height: 38px; background: rgba(255,239,0,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+  .reel-play::after { content: ''; border-left: 13px solid var(--black); border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+  .reel-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.7rem 0.6rem; background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%); z-index: 2; }
+  .reel-title { font-family: 'Bebas Neue', sans-serif; font-size: 0.82rem; line-height: 1.2; }
+  .reel-sub { font-size: 0.58rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .reel-tag { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.52rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: var(--magenta); color: var(--white); padding: 2px 5px; z-index: 2; }
+
+  /* MÚSICA */
+  #musica { background: var(--black); }
+  .music-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
+  .music-card { background: var(--gray); padding: 1rem; display: flex; flex-direction: column; gap: 0.65rem; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+  .music-card:hover { background: #202020; transform: translateY(-3px); }
+  .album-art { aspect-ratio: 1; background: linear-gradient(135deg, #1e1e1e, #0a0a0a); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: rgba(255,239,0,0.18); }
+  .music-platform { font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--yellow); }
+  .music-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.5px; line-height: 1.1; }
+  .music-artist { font-size: 0.72rem; color: var(--text-muted); }
+  .music-listen { display: flex; align-items: center; gap: 6px; font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--yellow); text-decoration: none; transition: gap 0.2s; }
+  .music-listen:hover { gap: 10px; }
+
+  /* NTDU */
+  #ntdu { background: var(--dark); position: relative; overflow: hidden; }
+  #ntdu::before { content: 'NTDU'; position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 22vw; color: rgba(204,0,255,0.04); top: 50%; left: 50%; transform: translate(-50%, -50%); letter-spacing: 10px; pointer-events: none; white-space: nowrap; }
+  .ntdu-intro { max-width: 680px; margin-bottom: 3rem; padding: 1.5rem; border-left: 3px solid var(--magenta); background: rgba(204,0,255,0.04); }
+  .ntdu-intro p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+  .ntdu-intro strong { color: var(--magenta); }
+  .ntdu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1px; background: rgba(204,0,255,0.1); }
+  .ntdu-card { background: var(--dark); padding: 1.5rem; cursor: pointer; transition: background 0.2s; display: flex; flex-direction: column; gap: 0.7rem; position: relative; overflow: hidden; }
+  .ntdu-card:hover { background: rgba(204,0,255,0.06); }
+  .ntdu-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--magenta); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .ntdu-card:hover::before { transform: scaleX(1); }
+  .ntdu-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(204,0,255,0.28), rgba(255,239,0,0.08)); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--magenta); border: 1px solid rgba(204,0,255,0.28); flex-shrink: 0; }
+  .ntdu-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.52rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(204,0,255,0.12); color: var(--magenta); border: 1px solid rgba(204,0,255,0.25); padding: 2px 7px; width: fit-content; }
+  .ntdu-badge::before { content: '★'; font-size: 0.55rem; }
+  .ntdu-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 1px; }
+  .ntdu-genre { font-size: 0.66rem; color: var(--magenta); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+  .ntdu-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+  .ntdu-ig { font-size: 0.62rem; color: rgba(255,255,255,0.35); }
+
+  /* NOSOTROS */
+  #nosotros { background: var(--black); }
+  .nosotros-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  @media(max-width:768px){ .nosotros-layout { grid-template-columns: 1fr; gap: 2rem; } }
+  .nosotros-statement { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; color: var(--white); margin-bottom: 2rem; }
+  .nosotros-statement .y { color: var(--yellow); }
+  .nosotros-statement .m { color: var(--magenta); }
+  .nosotros-text { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem; }
+  .nosotros-text strong { color: var(--white); }
+  .values-list { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+  .value-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .value-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: rgba(255,239,0,0.28); min-width: 28px; line-height: 1; }
+  .value-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--yellow); margin-bottom: 4px; }
+  .value-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+  .editorial-box { margin-top: 1.5rem; padding: 1.5rem; border: 1px solid rgba(255,239,0,0.18); background: rgba(255,239,0,0.03); }
+  .editorial-box-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.65rem; }
+  .editorial-box-text { font-size: 0.83rem; color: var(--white); line-height: 1.7; font-style: italic; }
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); }
+  .team-member { background: var(--dark); padding: 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; }
+  .team-avatar { width: 46px; height: 46px; background: linear-gradient(135deg, rgba(255,239,0,0.18), rgba(204,0,255,0.1)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--yellow); margin-bottom: 0.4rem; }
+  .team-role { font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--magenta); }
+  .team-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; color: var(--white); }
+  .team-desc { font-size: 0.7rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* FOOTER */
+  footer { background: var(--dark); border-top: 1px solid rgba(255,239,0,0.12); padding: 3rem 2rem; }
+  .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+  @media(max-width:768px){ .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--yellow); letter-spacing: 3px; display: block; margin-bottom: 0.7rem; }
+  .footer-tagline { font-size: 0.78rem; color: var(--text-muted); line-height: 1.65; max-width: 280px; }
+  .footer-email { display: inline-block; margin-top: 1rem; font-size: 0.72rem; color: var(--yellow); text-decoration: none; font-weight: 600; }
+  .footer-col-title { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 2px; color: var(--white); margin-bottom: 1rem; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.5rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--yellow); }
+  .footer-socials { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .social-pill { font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 11px; border: 1px solid rgba(255,255,255,0.14); color: var(--white); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+  .social-pill:hover { border-color: var(--yellow); color: var(--yellow); }
+  .footer-bottom { padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.22); }
+  .footer-made { font-size: 0.62rem; color: rgba(255,255,255,0.18); letter-spacing: 1px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">PRENSA TRAP</a>
+  <ul class="nav-links">
+    <li><a href="#noticias">Noticias</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#reels">Reels</a></li>
+    <li><a href="#musica">Música</a></li>
+    <li><a href="#ntdu">NTDU</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="mailto:prensatrapcl@gmail.com" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ticker">
+    <div class="ticker-inner">
+      <span>TRAP CHILENO</span><span class="ticker-sep">✦</span>
+      <span>NOTICIAS</span><span class="ticker-sep">✦</span>
+      <span>ENTREVISTAS</span><span class="ticker-sep">✦</span>
+      <span>SHOWS EN VIVO</span><span class="ticker-sep">✦</span>
+      <span>NUEVOS TALENTOS DEL UNDER</span><span class="ticker-sep">✦</span>
+      <span>ROSIN RECS</span><span class="ticker-sep">✦</span>
+      <span>PRENSATRAPCL</span><span class="ticker-sep">✦</span>
+      <span>TRAP CHILENO</span><span class="ticker-sep">✦</span>
+      <span>NOTICIAS</span><span class="ticker-sep">✦</span>
+      <span>ENTREVISTAS</span><span class="ticker-sep">✦</span>
+      <span>SHOWS EN VIVO</span><span class="ticker-sep">✦</span>
+      <span>NUEVOS TALENTOS DEL UNDER</span><span class="ticker-sep">✦</span>
+      <span>ROSIN RECS</span><span class="ticker-sep">✦</span>
+      <span>PRENSATRAPCL</span><span class="ticker-sep">✦</span>
+    </div>
+  </div>
+  <div class="hero-label">Santiago, Chile — Trap Chileno · Media</div>
+  <h1 class="hero-title">
+    <span class="accent">PRENSA</span><br>
+    <span class="outline">TRAP</span><br>
+    <span style="font-size:0.28em;letter-spacing:8px;color:var(--text-muted)">EL MEDIO DEL TRAP CHILENO</span>
+  </h1>
+  <p class="hero-sub">El medio de comunicación de referencia del Trap chileno. Noticias, entrevistas, cobertura de shows y difusión de nuevos talentos.</p>
+  <div class="hero-actions">
+    <a href="#noticias" class="btn-primary">Ver Noticias</a>
+    <a href="#ntdu" class="btn-ghost">Conoce el Under →</a>
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- NOTICIAS -->
+<section id="noticias">
+  <div class="section-header">
+    <h2 class="section-title">NOTICIAS</h2>
+    <span class="section-tag">ACTUALIDAD</span>
+    <span class="live-badge"><span class="live-dot"></span>En vivo</span>
+  </div>
+  <div class="prompt-box">
+    <span class="prompt-box-label">⚡ Prompt IA</span>
+    <p class="prompt-box-text">Para agregar noticias pídele a Claude o ChatGPT: <code>"Crea una card de noticia estilo PrensaTrap sobre [artista/evento]. Tono periodístico urbano, titular en mayúsculas, 2 párrafos + embed de IG. Sin hate."</code></p>
+  </div>
+  <div class="news-grid">
+
+    <article class="news-card">
+      <div class="news-card-img-ph"><span class="cat-badge">ESTRENO</span></div>
+      <div class="news-card-body">
+        <div class="news-card-meta">Hace 2 horas · Estrenos</div>
+        <h3 class="news-card-title">DREFQUILA ANUNCIA SHOW HISTÓRICO EN EL MOVISTAR ARENA</h3>
+        <p class="news-card-excerpt">El artista confirmó la fecha a través de sus redes sociales, generando una avalancha de reacciones. La producción promete ser la más ambiciosa de su carrera.</p>
+        <p class="news-card-excerpt">El evento ya agotó las primeras tandas de entradas y los detalles del line-up se darán a conocer durante la semana.</p>
+        <div class="embed-ph"><span class="embed-icon">📸</span><span>Embed Instagram · @prensatrapcl · Ver post original</span></div>
+      </div>
+      <div class="news-card-footer"><a class="read-more" href="#">Leer más →</a><span class="ig-tag">@prensatrapcl</span></div>
+    </article>
+
+    <article class="news-card">
+      <div class="news-card-img-ph"><span class="cat-badge">ENTREVISTA</span></div>
+      <div class="news-card-body">
+        <div class="news-card-meta">Ayer · Rosin Recs</div>
+        <h3 class="news-card-title">PABLITO CHILL-E REVELA CÓMO NACIÓ SU TEMA MÁS ESCUCHADO</h3>
+        <p class="news-card-excerpt">En conversación exclusiva con PrensaTrap, el artista abrió las puertas de su proceso creativo y habló sin filtros sobre los altos y bajos de la industria musical urbana en Chile.</p>
+        <p class="news-card-excerpt">Entre los temas: su próximo proyecto, las colaboraciones que vienen y cómo mantiene su autenticidad frente al crecimiento del género.</p>
+        <div class="embed-ph"><span class="embed-icon">▶</span><span>Ver entrevista completa · YouTube PrensaTrap CL</span></div>
+      </div>
+      <div class="news-card-footer"><a class="read-more" href="#">Leer más →</a><span class="ig-tag">@prensatrapcl</span></div>
+    </article>
+
+    <article class="news-card">
+      <div class="news-card-img-ph"><span class="cat-badge">COBERTURA</span></div>
+      <div class="news-card-body">
+        <div class="news-card-meta">2 días · Shows</div>
+        <h3 class="news-card-title">ASÍ FUE LA NOCHE QUE EL UNDER TOMÓ EL ESCENARIO</h3>
+        <p class="news-card-excerpt">PrensaTrap estuvo presente en el evento que reunió a más de ocho artistas emergentes del circuito underground chileno en una noche histórica.</p>
+        <p class="news-card-excerpt">El público respondió con energía desde el primer acto. Varios nombres sin el reconocimiento que merecen demostraron que el under chileno tiene nivel de sobra.</p>
+        <div class="embed-ph"><span class="embed-icon">📸</span><span>Galería completa · @prensatrapcl · 24 fotos</span></div>
+      </div>
+      <div class="news-card-footer"><a class="read-more" href="#">Leer más →</a><span class="ig-tag">@prensatrapcl</span></div>
+    </article>
+
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="section-header">
+    <h2 class="section-title">GALERÍA</h2>
+    <span class="section-tag">SHOWS EN VIVO</span>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:100%"><div class="gallery-ph-text">SHOW 01<br>Santiago 2024</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Show · Santiago · 2024</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:133%"><div class="gallery-ph-text">BACKSTAGE<br>Rosin Recs</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Backstage · Rosin Recs</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:75%"><div class="gallery-ph-text">FESTIVAL<br>Under 2024</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Festival Under · 2024</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:120%"><div class="gallery-ph-text">EN VIVO<br>Prensadores</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Prensadores · En vivo</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:90%"><div class="gallery-ph-text">SHOW 02<br>Valparaíso</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Show · Valparaíso</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:110%"><div class="gallery-ph-text">NTDU<br>Live</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">NTDU · Live</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:80%"><div class="gallery-ph-text">PT SET<br>Entrevista</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Entrevista · PT Set</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:130%"><div class="gallery-ph-text">CROWD<br>Show 03</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Crowd · Show 03</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-ph" style="padding-bottom:90%"><div class="gallery-ph-text">SESIÓN<br>Artista</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Artista · Sesión de fotos</span></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem"><a href="#" class="btn-primary">Ver Galería Completa</a></div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="section-header">
+    <h2 class="section-title">VIDEOS</h2>
+    <span class="section-tag">SHOWS EN VIVO</span>
+  </div>
+  <div class="videos-grid">
+    <div class="video-card">
+      <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
+      <div class="video-info"><div class="video-title">ROSIN RECS EP.12 — ARTISTA EN VIVO</div><div class="video-meta">PrensaTrap CL · YouTube · 24 min</div></div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
+      <div class="video-info"><div class="video-title">COBERTURA FESTIVAL UNDER 2024</div><div class="video-meta">PrensaTrap CL · YouTube · 18 min</div></div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
+      <div class="video-info"><div class="video-title">CÓMO SE CREÓ — BEHIND THE SCENES</div><div class="video-meta">PrensaTrap CL · YouTube · 12 min</div></div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
+      <div class="video-info"><div class="video-title">CONOCIENDO A — TEMPORADA 2</div><div class="video-meta">PrensaTrap CL · YouTube · 32 min</div></div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
+      <div class="video-info"><div class="video-title">3 TEMAS PARA CONOCERME</div><div class="video-meta">PrensaTrap CL · YouTube · 9 min</div></div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
+      <div class="video-info"><div class="video-title">PREGUNTAS RÁPIDAS — EP.08</div><div class="video-meta">PrensaTrap CL · YouTube · 7 min</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- REELS -->
+<section id="reels">
+  <div class="section-header">
+    <h2 class="section-title">REELS</h2>
+    <span class="section-tag mg">SHORTS Y ENTREVISTAS</span>
+  </div>
+  <div class="reels-scroll">
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Entrevista</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Artista habla de sus inicios en el trap</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Show</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">El momento que todos esperaban 🔥</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">NTDU</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Nuevo talento que tienes que conocer</div><div class="reel-sub">@prensatrapcl · TikTok</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Viral</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Un fan hizo esto en el show 😳</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Backstage</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Detrás del escenario: así fue</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Entrevista</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Rosin Recs: los mejores momentos</div><div class="reel-sub">@prensatrapcl · YouTube</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Show</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">La canción que hizo explotar el recinto</div><div class="reel-sub">@prensatrapcl · TikTok</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Datos</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">¿Sabías esto del trap chileno?</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- MÚSICA -->
+<section id="musica">
+  <div class="section-header">
+    <h2 class="section-title">MÚSICA</h2>
+    <span class="section-tag">RECOMENDADA</span>
+  </div>
+  <div class="music-grid">
+    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">TÍTULO DEL TEMA</div><div class="music-artist">Artista — Single 2024</div><a href="#" class="music-listen">Escuchar →</a></div>
+    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">ÁLBUM DESTACADO</div><div class="music-artist">Artista — Álbum 2024</div><a href="#" class="music-listen">Escuchar →</a></div>
+    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">YouTube Music</div><div class="music-title">COLLAB DEL MES</div><div class="music-artist">Artista A ft. Artista B</div><a href="#" class="music-listen">Escuchar →</a></div>
+    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">LO MÁS ESCUCHADO</div><div class="music-artist">Artista — EP 2024</div><a href="#" class="music-listen">Escuchar →</a></div>
+    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">SoundCloud</div><div class="music-title">UNDERGROUND PICK</div><div class="music-artist">Artista Under — Demo</div><a href="#" class="music-listen">Escuchar →</a></div>
+    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">PLAYLIST PRENSATRAP</div><div class="music-artist">Curada por el equipo</div><a href="#" class="music-listen">Escuchar →</a></div>
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- NTDU -->
+<section id="ntdu">
+  <div class="section-header">
+    <h2 class="section-title" style="color:var(--magenta)">NTDU</h2>
+    <span class="section-tag mg">NUEVOS TALENTOS DEL UNDER</span>
+  </div>
+  <div class="ntdu-intro">
+    <p><strong>La sección más importante del under chileno.</strong> Acá presentamos a los artistas que están construyendo la próxima generación del trap nacional. Sin algoritmos, sin likes comprados: puro talento verificado por PrensaTrap.</p>
+  </div>
+  <div class="ntdu-grid">
+
+    <div class="ntdu-card">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="ntdu-avatar">AR</div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">ARTISTA</div><div class="ntdu-genre">Trap · Santiago</div></div>
+      </div>
+      <p class="ntdu-desc">Descripción del artista, su sonido y lo que lo hace único dentro del under chileno. Sus referencias, propuesta y por qué PrensaTrap lo está siguiendo de cerca.</p>
+      <div class="ntdu-ig">@usuario.instagram</div>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+    </div>
+
+    <div class="ntdu-card">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="ntdu-avatar">MC</div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">MC NOMBRE</div><div class="ntdu-genre">Rap · Valparaíso</div></div>
+      </div>
+      <p class="ntdu-desc">Viene de la escena de Valparaíso y su estilo mezcla el trap con referencias del rap chileno clásico. Tiene un proyecto en camino que promete para 2025.</p>
+      <div class="ntdu-ig">@mc.nombre</div>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+    </div>
+
+    <div class="ntdu-card">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="ntdu-avatar">DU</div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">DUO NOMBRE</div><div class="ntdu-genre">Trap · Santiago</div></div>
+      </div>
+      <p class="ntdu-desc">Uno de los proyectos más frescos del under. Su propuesta visual y sonora rompe con lo que se está haciendo en el género local sin perder la esencia del trap chileno.</p>
+      <div class="ntdu-ig">@duo.nombre</div>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+    </div>
+
+    <div class="ntdu-card">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="ntdu-avatar">PR</div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">PRODUCTORA</div><div class="ntdu-genre">Beatmaker · Concepción</div></div>
+      </div>
+      <p class="ntdu-desc">Los productores también son parte del NTDU. Este beatmaker viene con una sonoridad diferente que ya llamó la atención de varios artistas del circuito.</p>
+      <div class="ntdu-ig">@productora.ig</div>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+    </div>
+
+    <div class="ntdu-card">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="ntdu-avatar">LF</div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">LA FLOW</div><div class="ntdu-genre">Trap · Santiago</div></div>
+      </div>
+      <p class="ntdu-desc">Su EP debut acumuló más de 50K reproducciones en su primera semana sin mayor difusión masiva. El boca a boca hizo el trabajo. PrensaTrap lo tuvo primero.</p>
+      <div class="ntdu-ig">@laflow.ig</div>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+    </div>
+
+    <div class="ntdu-card">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="ntdu-avatar">?</div>
+        <div><div class="ntdu-badge" style="background:rgba(255,239,0,0.1);color:var(--yellow);border-color:rgba(255,239,0,0.2)">Próximamente</div><div class="ntdu-name">TÚ AQUÍ</div><div class="ntdu-genre">¿Eres el próximo?</div></div>
+      </div>
+      <p class="ntdu-desc">¿Eres artista del under? Mándanos tu música y tu historia. Si tienes el nivel, el NTDU tiene tu espacio.</p>
+      <div class="ntdu-ig">prensatrapcl@gmail.com</div>
+      <a href="mailto:prensatrapcl@gmail.com" class="music-listen" style="margin-top:0.4rem;color:var(--magenta)">Postúlate →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="section-header">
+    <h2 class="section-title">NOSOTROS</h2>
+    <span class="section-tag">QUIÉNES SOMOS</span>
+  </div>
+  <div class="nosotros-layout">
+    <div>
+      <h3 class="nosotros-statement">LA <span class="y">VOZ</span> DEL<br>TRAP<br><span class="m">CHILENO</span></h3>
+      <p class="nosotros-text"><strong>PrensaTrap</strong> es el medio de comunicación de referencia del Trap chileno. Somos un equipo apasionado por la cultura urbana, comprometido con la creación de contenido de alta calidad y la difusión del género en Chile.</p>
+      <p class="nosotros-text">Nuestro trabajo abarca entrevistas con artistas, cobertura de estrenos, reseñas de álbumes, noticias de la industria, gestión de prensa y manejo artístico para artistas emergentes y establecidos del género urbano chileno.</p>
+      <div class="editorial-box">
+        <div class="editorial-box-label">Línea Editorial</div>
+        <p class="editorial-box-text">"PrensaTrap habla como un medio cercano, no como un fan. Somos periodismo urbano de cabecera: informados, directos y dentro de la cultura."</p>
+      </div>
+      <div class="values-list">
+        <div class="value-item"><span class="value-num">01</span><div><div class="value-title">Autenticidad</div><p class="value-desc">Hablamos desde adentro de la cultura, no desde afuera.</p></div></div>
+        <div class="value-item"><span class="value-num">02</span><div><div class="value-title">Cercanía</div><p class="value-desc">Somos un medio de cabecera, no una institución fría.</p></div></div>
+        <div class="value-item"><span class="value-num">03</span><div><div class="value-title">Respeto al Artista</div><p class="value-desc">Sin hate. Cubrimos con criterio y sin atacar a nadie dentro del género.</p></div></div>
+        <div class="value-item"><span class="value-num">04</span><div><div class="value-title">Calidad</div><p class="value-desc">Cada pieza de contenido debe reflejar profesionalismo y cuidado editorial.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:1rem">Equipo Editorial</div>
+      <div class="team-grid">
+        <div class="team-member"><div class="team-avatar">MA</div><div class="team-role">Editor General</div><div class="team-name">Macsi</div><div class="team-desc">Coordinación editorial y capacitación del equipo.</div></div>
+        <div class="team-member"><div class="team-avatar">SI</div><div class="team-role">Director General</div><div class="team-name">Simón</div><div class="team-desc">Revisión estricta de calidad en cada publicación.</div></div>
+        <div class="team-member"><div class="team-avatar">SE</div><div class="team-role">Dir. Creativo & Op.</div><div class="team-name">Seba</div><div class="team-desc">Retroalimentación formativa y dirección creativa.</div></div>
+        <div class="team-member"><div class="team-avatar">CR</div><div class="team-role">Periodista & Director</div><div class="team-name">Cristian</div><div class="team-desc">Producción de entrevistas y dirección editorial.</div></div>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem;background:var(--gray);border-left:3px solid var(--yellow)">
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:0.75rem">¿Quieres ser Postmaker?</div>
+        <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem">Buscamos redactores-diseñadores con conocimiento del trap chileno. 3-4 posts diarios bajo los estándares del medio.</p>
+        <a href="mailto:prensatrapcl@gmail.com" class="btn-primary" style="font-size:0.68rem;padding:0.55rem 1.1rem">Postularme →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pt-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">PRENSA TRAP</span>
+      <p class="footer-tagline">El medio de comunicación de referencia del Trap chileno. Noticias, entrevistas, cobertura de shows y difusión de nuevos talentos desde Santiago.</p>
+      <a class="footer-email" href="mailto:prensatrapcl@gmail.com">prensatrapcl@gmail.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">SECCIONES</div>
+      <ul class="footer-links">
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#galeria">Galería de Fotos</a></li>
+        <li><a href="#videos">Videos en Vivo</a></li>
+        <li><a href="#reels">Reels</a></li>
+        <li><a href="#musica">Música Recomendada</a></li>
+        <li><a href="#ntdu">NTDU</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">REDES</div>
+      <div class="footer-socials">
+        <a href="https://instagram.com/prensatrapcl" class="social-pill" target="_blank">Instagram</a>
+        <a href="https://youtube.com" class="social-pill" target="_blank">YouTube</a>
+        <a href="https://tiktok.com/@prensatrapcl" class="social-pill" target="_blank">TikTok</a>
+        <a href="https://facebook.com" class="social-pill" target="_blank">Facebook</a>
+      </div>
+      <div style="margin-top:1.5rem;padding:1rem;border:1px solid rgba(255,239,0,0.14);background:rgba(255,239,0,0.03)">
+        <div style="font-size:0.58rem;font-weight:700;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:0.5rem">Servicios</div>
+        <p style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Prensa · Gestión artística · Entrevistas · Cobertura de eventos</p>
+        <a href="mailto:prensatrapcl@gmail.com" style="font-size:0.68rem;color:var(--yellow);text-decoration:none;font-weight:600;display:block;margin-top:0.5rem">Consultar →</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 PrensaTrap · PRENSATRAPCL SPA · Santiago, Chile</span>
+    <span class="footer-made">Trap Chileno · Media</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    navAs.forEach(a => {
+      const active = a.getAttribute('href') === '#' + cur;
+      a.style.color = active ? 'var(--yellow)' : '';
+      a.style.opacity = active ? '1' : '0.65';
+    });
+  });
+</script>
+</body>
+</html>
