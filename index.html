@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRENSA TRAP — El Medio del Trap Chileno</title>
+<title>PRENSA TRAP â El Medio del Trap Chileno</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -107,7 +107,7 @@
   .embed-ph { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; color: var(--text-muted); margin-top: 0.5rem; }
   .embed-icon { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
 
-  /* GALERÍA */
+  /* GALERÃA */
   #galeria { background: var(--dark); }
   .gallery-grid { columns: 3; column-gap: 4px; }
   @media(max-width:768px){ .gallery-grid { columns: 2; } }
@@ -147,7 +147,7 @@
   .reel-sub { font-size: 0.58rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
   .reel-tag { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.52rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: var(--magenta); color: var(--white); padding: 2px 5px; z-index: 2; }
 
-  /* MÚSICA */
+  /* MÃSICA */
   #musica { background: var(--black); }
   .music-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
   .music-card { background: var(--gray); padding: 1rem; display: flex; flex-direction: column; gap: 0.65rem; cursor: pointer; transition: background 0.2s, transform 0.2s; }
@@ -172,7 +172,7 @@
   .ntdu-card:hover::before { transform: scaleX(1); }
   .ntdu-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(204,0,255,0.28), rgba(255,239,0,0.08)); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--magenta); border: 1px solid rgba(204,0,255,0.28); flex-shrink: 0; }
   .ntdu-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.52rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(204,0,255,0.12); color: var(--magenta); border: 1px solid rgba(204,0,255,0.25); padding: 2px 7px; width: fit-content; }
-  .ntdu-badge::before { content: '★'; font-size: 0.55rem; }
+  .ntdu-badge::before { content: 'â'; font-size: 0.55rem; }
   .ntdu-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 1px; }
   .ntdu-genre { font-size: 0.66rem; color: var(--magenta); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
   .ntdu-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
@@ -220,6 +220,30 @@
   .footer-bottom { padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.22); }
   .footer-made { font-size: 0.62rem; color: rgba(255,255,255,0.18); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* INSTAGRAM */
+  #instagram { background: var(--dark); }
+  .ig-profile { display: flex; align-items: center; gap: 1.5rem; padding: 2rem 0 2rem; }
+  .ig-avatar { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--yellow); object-fit: cover; flex-shrink: 0; }
+  .ig-profile-info { display: flex; flex-direction: column; gap: 0.3rem; }
+  .ig-username { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--yellow); letter-spacing: 1px; }
+  .ig-bio { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; white-space: pre-line; }
+  .ig-stats { display: flex; gap: 1.5rem; margin-top: 0.5rem; }
+  .ig-stat { display: flex; flex-direction: column; align-items: center; }
+  .ig-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--white); }
+  .ig-stat-label { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+  .ig-feed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  @media(max-width: 768px) { .ig-feed-grid { grid-template-columns: repeat(2, 1fr); } }
+  .ig-post { position: relative; aspect-ratio: 1; overflow: hidden; cursor: pointer; }
+  .ig-post img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .ig-post:hover img { transform: scale(1.05); }
+  .ig-post-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 0.8rem; }
+  .ig-post:hover .ig-post-overlay { opacity: 1; }
+  .ig-post-caption { font-size: 0.68rem; color: #fff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .ig-post-type { position: absolute; top: 8px; right: 8px; font-size: 0.6rem; background: var(--yellow); color: var(--black); padding: 2px 6px; border-radius: 3px; font-weight: 700; letter-spacing: 1px; }
+  .ig-follow-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; background: var(--yellow); color: var(--black); font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 2px; padding: 0.6rem 1.5rem; text-decoration: none; border-radius: 4px; transition: opacity 0.2s; }
+  .ig-follow-btn:hover { opacity: 0.85; }
+
 </style>
 </head>
 <body>
@@ -229,12 +253,13 @@
   <a class="nav-logo" href="#">PRENSA TRAP</a>
   <ul class="nav-links">
     <li><a href="#noticias">Noticias</a></li>
-    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#galeria">GalerÃ­a</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#reels">Reels</a></li>
-    <li><a href="#musica">Música</a></li>
+    <li><a href="#musica">MÃºsica</a></li>
     <li><a href="#ntdu">NTDU</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#instagram">Instagram</a></li>
     <li><a href="mailto:prensatrapcl@gmail.com" class="nav-cta">Contacto</a></li>
   </ul>
 </nav>
@@ -244,32 +269,32 @@
   <div class="hero-bg"></div>
   <div class="hero-ticker">
     <div class="ticker-inner">
-      <span>TRAP CHILENO</span><span class="ticker-sep">✦</span>
-      <span>NOTICIAS</span><span class="ticker-sep">✦</span>
-      <span>ENTREVISTAS</span><span class="ticker-sep">✦</span>
-      <span>SHOWS EN VIVO</span><span class="ticker-sep">✦</span>
-      <span>NUEVOS TALENTOS DEL UNDER</span><span class="ticker-sep">✦</span>
-      <span>ROSIN RECS</span><span class="ticker-sep">✦</span>
-      <span>PRENSATRAPCL</span><span class="ticker-sep">✦</span>
-      <span>TRAP CHILENO</span><span class="ticker-sep">✦</span>
-      <span>NOTICIAS</span><span class="ticker-sep">✦</span>
-      <span>ENTREVISTAS</span><span class="ticker-sep">✦</span>
-      <span>SHOWS EN VIVO</span><span class="ticker-sep">✦</span>
-      <span>NUEVOS TALENTOS DEL UNDER</span><span class="ticker-sep">✦</span>
-      <span>ROSIN RECS</span><span class="ticker-sep">✦</span>
-      <span>PRENSATRAPCL</span><span class="ticker-sep">✦</span>
+      <span>TRAP CHILENO</span><span class="ticker-sep">â¦</span>
+      <span>NOTICIAS</span><span class="ticker-sep">â¦</span>
+      <span>ENTREVISTAS</span><span class="ticker-sep">â¦</span>
+      <span>SHOWS EN VIVO</span><span class="ticker-sep">â¦</span>
+      <span>NUEVOS TALENTOS DEL UNDER</span><span class="ticker-sep">â¦</span>
+      <span>ROSIN RECS</span><span class="ticker-sep">â¦</span>
+      <span>PRENSATRAPCL</span><span class="ticker-sep">â¦</span>
+      <span>TRAP CHILENO</span><span class="ticker-sep">â¦</span>
+      <span>NOTICIAS</span><span class="ticker-sep">â¦</span>
+      <span>ENTREVISTAS</span><span class="ticker-sep">â¦</span>
+      <span>SHOWS EN VIVO</span><span class="ticker-sep">â¦</span>
+      <span>NUEVOS TALENTOS DEL UNDER</span><span class="ticker-sep">â¦</span>
+      <span>ROSIN RECS</span><span class="ticker-sep">â¦</span>
+      <span>PRENSATRAPCL</span><span class="ticker-sep">â¦</span>
     </div>
   </div>
-  <div class="hero-label">Santiago, Chile — Trap Chileno · Media</div>
+  <div class="hero-label">Santiago, Chile â Trap Chileno Â· Media</div>
   <h1 class="hero-title">
     <span class="accent">PRENSA</span><br>
     <span class="outline">TRAP</span><br>
     <span style="font-size:0.28em;letter-spacing:8px;color:var(--text-muted)">EL MEDIO DEL TRAP CHILENO</span>
   </h1>
-  <p class="hero-sub">El medio de comunicación de referencia del Trap chileno. Noticias, entrevistas, cobertura de shows y difusión de nuevos talentos.</p>
+  <p class="hero-sub">El medio de comunicaciÃ³n de referencia del Trap chileno. Noticias, entrevistas, cobertura de shows y difusiÃ³n de nuevos talentos.</p>
   <div class="hero-actions">
     <a href="#noticias" class="btn-primary">Ver Noticias</a>
-    <a href="#ntdu" class="btn-ghost">Conoce el Under →</a>
+    <a href="#ntdu" class="btn-ghost">Conoce el Under â</a>
   </div>
 </section>
 
@@ -283,45 +308,45 @@
     <span class="live-badge"><span class="live-dot"></span>En vivo</span>
   </div>
   <div class="prompt-box">
-    <span class="prompt-box-label">⚡ Prompt IA</span>
-    <p class="prompt-box-text">Para agregar noticias pídele a Claude o ChatGPT: <code>"Crea una card de noticia estilo PrensaTrap sobre [artista/evento]. Tono periodístico urbano, titular en mayúsculas, 2 párrafos + embed de IG. Sin hate."</code></p>
+    <span class="prompt-box-label">â¡ Prompt IA</span>
+    <p class="prompt-box-text">Para agregar noticias pÃ­dele a Claude o ChatGPT: <code>"Crea una card de noticia estilo PrensaTrap sobre [artista/evento]. Tono periodÃ­stico urbano, titular en mayÃºsculas, 2 pÃ¡rrafos + embed de IG. Sin hate."</code></p>
   </div>
   <div class="news-grid">
 
     <article class="news-card">
       <div class="news-card-img-ph"><span class="cat-badge">ESTRENO</span></div>
       <div class="news-card-body">
-        <div class="news-card-meta">Hace 2 horas · Estrenos</div>
-        <h3 class="news-card-title">DREFQUILA ANUNCIA SHOW HISTÓRICO EN EL MOVISTAR ARENA</h3>
-        <p class="news-card-excerpt">El artista confirmó la fecha a través de sus redes sociales, generando una avalancha de reacciones. La producción promete ser la más ambiciosa de su carrera.</p>
-        <p class="news-card-excerpt">El evento ya agotó las primeras tandas de entradas y los detalles del line-up se darán a conocer durante la semana.</p>
-        <div class="embed-ph"><span class="embed-icon">📸</span><span>Embed Instagram · @prensatrapcl · Ver post original</span></div>
+        <div class="news-card-meta">Hace 2 horas Â· Estrenos</div>
+        <h3 class="news-card-title">DREFQUILA ANUNCIA SHOW HISTÃRICO EN EL MOVISTAR ARENA</h3>
+        <p class="news-card-excerpt">El artista confirmÃ³ la fecha a travÃ©s de sus redes sociales, generando una avalancha de reacciones. La producciÃ³n promete ser la mÃ¡s ambiciosa de su carrera.</p>
+        <p class="news-card-excerpt">El evento ya agotÃ³ las primeras tandas de entradas y los detalles del line-up se darÃ¡n a conocer durante la semana.</p>
+        <div class="embed-ph"><span class="embed-icon">ð¸</span><span>Embed Instagram Â· @prensatrapcl Â· Ver post original</span></div>
       </div>
-      <div class="news-card-footer"><a class="read-more" href="#">Leer más →</a><span class="ig-tag">@prensatrapcl</span></div>
+      <div class="news-card-footer"><a class="read-more" href="#">Leer mÃ¡s â</a><span class="ig-tag">@prensatrapcl</span></div>
     </article>
 
     <article class="news-card">
       <div class="news-card-img-ph"><span class="cat-badge">ENTREVISTA</span></div>
       <div class="news-card-body">
-        <div class="news-card-meta">Ayer · Rosin Recs</div>
-        <h3 class="news-card-title">PABLITO CHILL-E REVELA CÓMO NACIÓ SU TEMA MÁS ESCUCHADO</h3>
-        <p class="news-card-excerpt">En conversación exclusiva con PrensaTrap, el artista abrió las puertas de su proceso creativo y habló sin filtros sobre los altos y bajos de la industria musical urbana en Chile.</p>
-        <p class="news-card-excerpt">Entre los temas: su próximo proyecto, las colaboraciones que vienen y cómo mantiene su autenticidad frente al crecimiento del género.</p>
-        <div class="embed-ph"><span class="embed-icon">▶</span><span>Ver entrevista completa · YouTube PrensaTrap CL</span></div>
+        <div class="news-card-meta">Ayer Â· Rosin Recs</div>
+        <h3 class="news-card-title">PABLITO CHILL-E REVELA CÃMO NACIÃ SU TEMA MÃS ESCUCHADO</h3>
+        <p class="news-card-excerpt">En conversaciÃ³n exclusiva con PrensaTrap, el artista abriÃ³ las puertas de su proceso creativo y hablÃ³ sin filtros sobre los altos y bajos de la industria musical urbana en Chile.</p>
+        <p class="news-card-excerpt">Entre los temas: su prÃ³ximo proyecto, las colaboraciones que vienen y cÃ³mo mantiene su autenticidad frente al crecimiento del gÃ©nero.</p>
+        <div class="embed-ph"><span class="embed-icon">â¶</span><span>Ver entrevista completa Â· YouTube PrensaTrap CL</span></div>
       </div>
-      <div class="news-card-footer"><a class="read-more" href="#">Leer más →</a><span class="ig-tag">@prensatrapcl</span></div>
+      <div class="news-card-footer"><a class="read-more" href="#">Leer mÃ¡s â</a><span class="ig-tag">@prensatrapcl</span></div>
     </article>
 
     <article class="news-card">
       <div class="news-card-img-ph"><span class="cat-badge">COBERTURA</span></div>
       <div class="news-card-body">
-        <div class="news-card-meta">2 días · Shows</div>
-        <h3 class="news-card-title">ASÍ FUE LA NOCHE QUE EL UNDER TOMÓ EL ESCENARIO</h3>
-        <p class="news-card-excerpt">PrensaTrap estuvo presente en el evento que reunió a más de ocho artistas emergentes del circuito underground chileno en una noche histórica.</p>
-        <p class="news-card-excerpt">El público respondió con energía desde el primer acto. Varios nombres sin el reconocimiento que merecen demostraron que el under chileno tiene nivel de sobra.</p>
-        <div class="embed-ph"><span class="embed-icon">📸</span><span>Galería completa · @prensatrapcl · 24 fotos</span></div>
+        <div class="news-card-meta">2 dÃ­as Â· Shows</div>
+        <h3 class="news-card-title">ASÃ FUE LA NOCHE QUE EL UNDER TOMÃ EL ESCENARIO</h3>
+        <p class="news-card-excerpt">PrensaTrap estuvo presente en el evento que reuniÃ³ a mÃ¡s de ocho artistas emergentes del circuito underground chileno en una noche histÃ³rica.</p>
+        <p class="news-card-excerpt">El pÃºblico respondiÃ³ con energÃ­a desde el primer acto. Varios nombres sin el reconocimiento que merecen demostraron que el under chileno tiene nivel de sobra.</p>
+        <div class="embed-ph"><span class="embed-icon">ð¸</span><span>GalerÃ­a completa Â· @prensatrapcl Â· 24 fotos</span></div>
       </div>
-      <div class="news-card-footer"><a class="read-more" href="#">Leer más →</a><span class="ig-tag">@prensatrapcl</span></div>
+      <div class="news-card-footer"><a class="read-more" href="#">Leer mÃ¡s â</a><span class="ig-tag">@prensatrapcl</span></div>
     </article>
 
   </div>
@@ -329,51 +354,51 @@
 
 <div class="pt-divider"></div>
 
-<!-- GALERÍA -->
+<!-- GALERÃA -->
 <section id="galeria">
   <div class="section-header">
-    <h2 class="section-title">GALERÍA</h2>
+    <h2 class="section-title">GALERÃA</h2>
     <span class="section-tag">SHOWS EN VIVO</span>
   </div>
   <div class="gallery-grid">
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:100%"><div class="gallery-ph-text">SHOW 01<br>Santiago 2024</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Show · Santiago · 2024</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Show Â· Santiago Â· 2024</span></div>
     </div>
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:133%"><div class="gallery-ph-text">BACKSTAGE<br>Rosin Recs</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Backstage · Rosin Recs</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Backstage Â· Rosin Recs</span></div>
     </div>
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:75%"><div class="gallery-ph-text">FESTIVAL<br>Under 2024</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Festival Under · 2024</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Festival Under Â· 2024</span></div>
     </div>
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:120%"><div class="gallery-ph-text">EN VIVO<br>Prensadores</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Prensadores · En vivo</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Prensadores Â· En vivo</span></div>
     </div>
     <div class="gallery-item">
-      <div class="gallery-ph" style="padding-bottom:90%"><div class="gallery-ph-text">SHOW 02<br>Valparaíso</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Show · Valparaíso</span></div>
+      <div class="gallery-ph" style="padding-bottom:90%"><div class="gallery-ph-text">SHOW 02<br>ValparaÃ­so</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Show Â· ValparaÃ­so</span></div>
     </div>
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:110%"><div class="gallery-ph-text">NTDU<br>Live</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">NTDU · Live</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">NTDU Â· Live</span></div>
     </div>
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:80%"><div class="gallery-ph-text">PT SET<br>Entrevista</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Entrevista · PT Set</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Entrevista Â· PT Set</span></div>
     </div>
     <div class="gallery-item">
       <div class="gallery-ph" style="padding-bottom:130%"><div class="gallery-ph-text">CROWD<br>Show 03</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Crowd · Show 03</span></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Crowd Â· Show 03</span></div>
     </div>
     <div class="gallery-item">
-      <div class="gallery-ph" style="padding-bottom:90%"><div class="gallery-ph-text">SESIÓN<br>Artista</div></div>
-      <div class="gallery-ov"><span class="gallery-ov-text">Artista · Sesión de fotos</span></div>
+      <div class="gallery-ph" style="padding-bottom:90%"><div class="gallery-ph-text">SESIÃN<br>Artista</div></div>
+      <div class="gallery-ov"><span class="gallery-ov-text">Artista Â· SesiÃ³n de fotos</span></div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:2rem"><a href="#" class="btn-primary">Ver Galería Completa</a></div>
+  <div style="text-align:center;margin-top:2rem"><a href="#" class="btn-primary">Ver GalerÃ­a Completa</a></div>
 </section>
 
 <div class="pt-divider"></div>
@@ -387,27 +412,27 @@
   <div class="videos-grid">
     <div class="video-card">
       <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
-      <div class="video-info"><div class="video-title">ROSIN RECS EP.12 — ARTISTA EN VIVO</div><div class="video-meta">PrensaTrap CL · YouTube · 24 min</div></div>
+      <div class="video-info"><div class="video-title">ROSIN RECS EP.12 â ARTISTA EN VIVO</div><div class="video-meta">PrensaTrap CL Â· YouTube Â· 24 min</div></div>
     </div>
     <div class="video-card">
       <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
-      <div class="video-info"><div class="video-title">COBERTURA FESTIVAL UNDER 2024</div><div class="video-meta">PrensaTrap CL · YouTube · 18 min</div></div>
+      <div class="video-info"><div class="video-title">COBERTURA FESTIVAL UNDER 2024</div><div class="video-meta">PrensaTrap CL Â· YouTube Â· 18 min</div></div>
     </div>
     <div class="video-card">
       <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
-      <div class="video-info"><div class="video-title">CÓMO SE CREÓ — BEHIND THE SCENES</div><div class="video-meta">PrensaTrap CL · YouTube · 12 min</div></div>
+      <div class="video-info"><div class="video-title">CÃMO SE CREÃ â BEHIND THE SCENES</div><div class="video-meta">PrensaTrap CL Â· YouTube Â· 12 min</div></div>
     </div>
     <div class="video-card">
       <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
-      <div class="video-info"><div class="video-title">CONOCIENDO A — TEMPORADA 2</div><div class="video-meta">PrensaTrap CL · YouTube · 32 min</div></div>
+      <div class="video-info"><div class="video-title">CONOCIENDO A â TEMPORADA 2</div><div class="video-meta">PrensaTrap CL Â· YouTube Â· 32 min</div></div>
     </div>
     <div class="video-card">
       <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
-      <div class="video-info"><div class="video-title">3 TEMAS PARA CONOCERME</div><div class="video-meta">PrensaTrap CL · YouTube · 9 min</div></div>
+      <div class="video-info"><div class="video-title">3 TEMAS PARA CONOCERME</div><div class="video-meta">PrensaTrap CL Â· YouTube Â· 9 min</div></div>
     </div>
     <div class="video-card">
       <div class="video-thumb"><div class="video-thumb-bg"></div><div class="play-btn"></div></div>
-      <div class="video-info"><div class="video-title">PREGUNTAS RÁPIDAS — EP.08</div><div class="video-meta">PrensaTrap CL · YouTube · 7 min</div></div>
+      <div class="video-info"><div class="video-title">PREGUNTAS RÃPIDAS â EP.08</div><div class="video-meta">PrensaTrap CL Â· YouTube Â· 7 min</div></div>
     </div>
   </div>
 </section>
@@ -421,32 +446,32 @@
     <span class="section-tag mg">SHORTS Y ENTREVISTAS</span>
   </div>
   <div class="reels-scroll">
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Entrevista</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Artista habla de sus inicios en el trap</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Show</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">El momento que todos esperaban 🔥</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">NTDU</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Nuevo talento que tienes que conocer</div><div class="reel-sub">@prensatrapcl · TikTok</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Viral</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Un fan hizo esto en el show 😳</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Backstage</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Detrás del escenario: así fue</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Entrevista</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Rosin Recs: los mejores momentos</div><div class="reel-sub">@prensatrapcl · YouTube</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Show</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">La canción que hizo explotar el recinto</div><div class="reel-sub">@prensatrapcl · TikTok</div></div></div>
-    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Datos</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">¿Sabías esto del trap chileno?</div><div class="reel-sub">@prensatrapcl · IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Entrevista</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Artista habla de sus inicios en el trap</div><div class="reel-sub">@prensatrapcl Â· IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Show</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">El momento que todos esperaban ð¥</div><div class="reel-sub">@prensatrapcl Â· IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">NTDU</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Nuevo talento que tienes que conocer</div><div class="reel-sub">@prensatrapcl Â· TikTok</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Viral</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Un fan hizo esto en el show ð³</div><div class="reel-sub">@prensatrapcl Â· IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Backstage</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">DetrÃ¡s del escenario: asÃ­ fue</div><div class="reel-sub">@prensatrapcl Â· IG</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Entrevista</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Rosin Recs: los mejores momentos</div><div class="reel-sub">@prensatrapcl Â· YouTube</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Show</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">La canciÃ³n que hizo explotar el recinto</div><div class="reel-sub">@prensatrapcl Â· TikTok</div></div></div>
+    <div class="reel-card"><div class="reel-bg"></div><span class="reel-tag">Datos</span><div class="reel-play"></div><div class="reel-info"><div class="reel-title">Â¿SabÃ­as esto del trap chileno?</div><div class="reel-sub">@prensatrapcl Â· IG</div></div></div>
   </div>
 </section>
 
 <div class="pt-divider"></div>
 
-<!-- MÚSICA -->
+<!-- MÃSICA -->
 <section id="musica">
   <div class="section-header">
-    <h2 class="section-title">MÚSICA</h2>
+    <h2 class="section-title">MÃSICA</h2>
     <span class="section-tag">RECOMENDADA</span>
   </div>
   <div class="music-grid">
-    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">TÍTULO DEL TEMA</div><div class="music-artist">Artista — Single 2024</div><a href="#" class="music-listen">Escuchar →</a></div>
-    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">ÁLBUM DESTACADO</div><div class="music-artist">Artista — Álbum 2024</div><a href="#" class="music-listen">Escuchar →</a></div>
-    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">YouTube Music</div><div class="music-title">COLLAB DEL MES</div><div class="music-artist">Artista A ft. Artista B</div><a href="#" class="music-listen">Escuchar →</a></div>
-    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">LO MÁS ESCUCHADO</div><div class="music-artist">Artista — EP 2024</div><a href="#" class="music-listen">Escuchar →</a></div>
-    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">SoundCloud</div><div class="music-title">UNDERGROUND PICK</div><div class="music-artist">Artista Under — Demo</div><a href="#" class="music-listen">Escuchar →</a></div>
-    <div class="music-card"><div class="album-art">▶</div><div class="music-platform">Spotify</div><div class="music-title">PLAYLIST PRENSATRAP</div><div class="music-artist">Curada por el equipo</div><a href="#" class="music-listen">Escuchar →</a></div>
+    <div class="music-card"><div class="album-art">â¶</div><div class="music-platform">Spotify</div><div class="music-title">TÃTULO DEL TEMA</div><div class="music-artist">Artista â Single 2024</div><a href="#" class="music-listen">Escuchar â</a></div>
+    <div class="music-card"><div class="album-art">â¶</div><div class="music-platform">Spotify</div><div class="music-title">ÃLBUM DESTACADO</div><div class="music-artist">Artista â Ãlbum 2024</div><a href="#" class="music-listen">Escuchar â</a></div>
+    <div class="music-card"><div class="album-art">â¶</div><div class="music-platform">YouTube Music</div><div class="music-title">COLLAB DEL MES</div><div class="music-artist">Artista A ft. Artista B</div><a href="#" class="music-listen">Escuchar â</a></div>
+    <div class="music-card"><div class="album-art">â¶</div><div class="music-platform">Spotify</div><div class="music-title">LO MÃS ESCUCHADO</div><div class="music-artist">Artista â EP 2024</div><a href="#" class="music-listen">Escuchar â</a></div>
+    <div class="music-card"><div class="album-art">â¶</div><div class="music-platform">SoundCloud</div><div class="music-title">UNDERGROUND PICK</div><div class="music-artist">Artista Under â Demo</div><a href="#" class="music-listen">Escuchar â</a></div>
+    <div class="music-card"><div class="album-art">â¶</div><div class="music-platform">Spotify</div><div class="music-title">PLAYLIST PRENSATRAP</div><div class="music-artist">Curada por el equipo</div><a href="#" class="music-listen">Escuchar â</a></div>
   </div>
 </section>
 
@@ -459,68 +484,68 @@
     <span class="section-tag mg">NUEVOS TALENTOS DEL UNDER</span>
   </div>
   <div class="ntdu-intro">
-    <p><strong>La sección más importante del under chileno.</strong> Acá presentamos a los artistas que están construyendo la próxima generación del trap nacional. Sin algoritmos, sin likes comprados: puro talento verificado por PrensaTrap.</p>
+    <p><strong>La secciÃ³n mÃ¡s importante del under chileno.</strong> AcÃ¡ presentamos a los artistas que estÃ¡n construyendo la prÃ³xima generaciÃ³n del trap nacional. Sin algoritmos, sin likes comprados: puro talento verificado por PrensaTrap.</p>
   </div>
   <div class="ntdu-grid">
 
     <div class="ntdu-card">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="ntdu-avatar">AR</div>
-        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">ARTISTA</div><div class="ntdu-genre">Trap · Santiago</div></div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">ARTISTA</div><div class="ntdu-genre">Trap Â· Santiago</div></div>
       </div>
-      <p class="ntdu-desc">Descripción del artista, su sonido y lo que lo hace único dentro del under chileno. Sus referencias, propuesta y por qué PrensaTrap lo está siguiendo de cerca.</p>
+      <p class="ntdu-desc">DescripciÃ³n del artista, su sonido y lo que lo hace Ãºnico dentro del under chileno. Sus referencias, propuesta y por quÃ© PrensaTrap lo estÃ¡ siguiendo de cerca.</p>
       <div class="ntdu-ig">@usuario.instagram</div>
-      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil â</a>
     </div>
 
     <div class="ntdu-card">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="ntdu-avatar">MC</div>
-        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">MC NOMBRE</div><div class="ntdu-genre">Rap · Valparaíso</div></div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">MC NOMBRE</div><div class="ntdu-genre">Rap Â· ValparaÃ­so</div></div>
       </div>
-      <p class="ntdu-desc">Viene de la escena de Valparaíso y su estilo mezcla el trap con referencias del rap chileno clásico. Tiene un proyecto en camino que promete para 2025.</p>
+      <p class="ntdu-desc">Viene de la escena de ValparaÃ­so y su estilo mezcla el trap con referencias del rap chileno clÃ¡sico. Tiene un proyecto en camino que promete para 2025.</p>
       <div class="ntdu-ig">@mc.nombre</div>
-      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil â</a>
     </div>
 
     <div class="ntdu-card">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="ntdu-avatar">DU</div>
-        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">DUO NOMBRE</div><div class="ntdu-genre">Trap · Santiago</div></div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">DUO NOMBRE</div><div class="ntdu-genre">Trap Â· Santiago</div></div>
       </div>
-      <p class="ntdu-desc">Uno de los proyectos más frescos del under. Su propuesta visual y sonora rompe con lo que se está haciendo en el género local sin perder la esencia del trap chileno.</p>
+      <p class="ntdu-desc">Uno de los proyectos mÃ¡s frescos del under. Su propuesta visual y sonora rompe con lo que se estÃ¡ haciendo en el gÃ©nero local sin perder la esencia del trap chileno.</p>
       <div class="ntdu-ig">@duo.nombre</div>
-      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil â</a>
     </div>
 
     <div class="ntdu-card">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="ntdu-avatar">PR</div>
-        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">PRODUCTORA</div><div class="ntdu-genre">Beatmaker · Concepción</div></div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">PRODUCTORA</div><div class="ntdu-genre">Beatmaker Â· ConcepciÃ³n</div></div>
       </div>
-      <p class="ntdu-desc">Los productores también son parte del NTDU. Este beatmaker viene con una sonoridad diferente que ya llamó la atención de varios artistas del circuito.</p>
+      <p class="ntdu-desc">Los productores tambiÃ©n son parte del NTDU. Este beatmaker viene con una sonoridad diferente que ya llamÃ³ la atenciÃ³n de varios artistas del circuito.</p>
       <div class="ntdu-ig">@productora.ig</div>
-      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil â</a>
     </div>
 
     <div class="ntdu-card">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="ntdu-avatar">LF</div>
-        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">LA FLOW</div><div class="ntdu-genre">Trap · Santiago</div></div>
+        <div><div class="ntdu-badge">Nuevo Talento</div><div class="ntdu-name">LA FLOW</div><div class="ntdu-genre">Trap Â· Santiago</div></div>
       </div>
-      <p class="ntdu-desc">Su EP debut acumuló más de 50K reproducciones en su primera semana sin mayor difusión masiva. El boca a boca hizo el trabajo. PrensaTrap lo tuvo primero.</p>
+      <p class="ntdu-desc">Su EP debut acumulÃ³ mÃ¡s de 50K reproducciones en su primera semana sin mayor difusiÃ³n masiva. El boca a boca hizo el trabajo. PrensaTrap lo tuvo primero.</p>
       <div class="ntdu-ig">@laflow.ig</div>
-      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil →</a>
+      <a href="#" class="music-listen" style="margin-top:0.4rem">Ver perfil â</a>
     </div>
 
     <div class="ntdu-card">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="ntdu-avatar">?</div>
-        <div><div class="ntdu-badge" style="background:rgba(255,239,0,0.1);color:var(--yellow);border-color:rgba(255,239,0,0.2)">Próximamente</div><div class="ntdu-name">TÚ AQUÍ</div><div class="ntdu-genre">¿Eres el próximo?</div></div>
+        <div><div class="ntdu-badge" style="background:rgba(255,239,0,0.1);color:var(--yellow);border-color:rgba(255,239,0,0.2)">PrÃ³ximamente</div><div class="ntdu-name">TÃ AQUÃ</div><div class="ntdu-genre">Â¿Eres el prÃ³ximo?</div></div>
       </div>
-      <p class="ntdu-desc">¿Eres artista del under? Mándanos tu música y tu historia. Si tienes el nivel, el NTDU tiene tu espacio.</p>
+      <p class="ntdu-desc">Â¿Eres artista del under? MÃ¡ndanos tu mÃºsica y tu historia. Si tienes el nivel, el NTDU tiene tu espacio.</p>
       <div class="ntdu-ig">prensatrapcl@gmail.com</div>
-      <a href="mailto:prensatrapcl@gmail.com" class="music-listen" style="margin-top:0.4rem;color:var(--magenta)">Postúlate →</a>
+      <a href="mailto:prensatrapcl@gmail.com" class="music-listen" style="margin-top:0.4rem;color:var(--magenta)">PostÃºlate â</a>
     </div>
 
   </div>
@@ -532,36 +557,36 @@
 <section id="nosotros">
   <div class="section-header">
     <h2 class="section-title">NOSOTROS</h2>
-    <span class="section-tag">QUIÉNES SOMOS</span>
+    <span class="section-tag">QUIÃNES SOMOS</span>
   </div>
   <div class="nosotros-layout">
     <div>
       <h3 class="nosotros-statement">LA <span class="y">VOZ</span> DEL<br>TRAP<br><span class="m">CHILENO</span></h3>
-      <p class="nosotros-text"><strong>PrensaTrap</strong> es el medio de comunicación de referencia del Trap chileno. Somos un equipo apasionado por la cultura urbana, comprometido con la creación de contenido de alta calidad y la difusión del género en Chile.</p>
-      <p class="nosotros-text">Nuestro trabajo abarca entrevistas con artistas, cobertura de estrenos, reseñas de álbumes, noticias de la industria, gestión de prensa y manejo artístico para artistas emergentes y establecidos del género urbano chileno.</p>
+      <p class="nosotros-text"><strong>PrensaTrap</strong> es el medio de comunicaciÃ³n de referencia del Trap chileno. Somos un equipo apasionado por la cultura urbana, comprometido con la creaciÃ³n de contenido de alta calidad y la difusiÃ³n del gÃ©nero en Chile.</p>
+      <p class="nosotros-text">Nuestro trabajo abarca entrevistas con artistas, cobertura de estrenos, reseÃ±as de Ã¡lbumes, noticias de la industria, gestiÃ³n de prensa y manejo artÃ­stico para artistas emergentes y establecidos del gÃ©nero urbano chileno.</p>
       <div class="editorial-box">
-        <div class="editorial-box-label">Línea Editorial</div>
+        <div class="editorial-box-label">LÃ­nea Editorial</div>
         <p class="editorial-box-text">"PrensaTrap habla como un medio cercano, no como un fan. Somos periodismo urbano de cabecera: informados, directos y dentro de la cultura."</p>
       </div>
       <div class="values-list">
         <div class="value-item"><span class="value-num">01</span><div><div class="value-title">Autenticidad</div><p class="value-desc">Hablamos desde adentro de la cultura, no desde afuera.</p></div></div>
-        <div class="value-item"><span class="value-num">02</span><div><div class="value-title">Cercanía</div><p class="value-desc">Somos un medio de cabecera, no una institución fría.</p></div></div>
-        <div class="value-item"><span class="value-num">03</span><div><div class="value-title">Respeto al Artista</div><p class="value-desc">Sin hate. Cubrimos con criterio y sin atacar a nadie dentro del género.</p></div></div>
+        <div class="value-item"><span class="value-num">02</span><div><div class="value-title">CercanÃ­a</div><p class="value-desc">Somos un medio de cabecera, no una instituciÃ³n frÃ­a.</p></div></div>
+        <div class="value-item"><span class="value-num">03</span><div><div class="value-title">Respeto al Artista</div><p class="value-desc">Sin hate. Cubrimos con criterio y sin atacar a nadie dentro del gÃ©nero.</p></div></div>
         <div class="value-item"><span class="value-num">04</span><div><div class="value-title">Calidad</div><p class="value-desc">Cada pieza de contenido debe reflejar profesionalismo y cuidado editorial.</p></div></div>
       </div>
     </div>
     <div>
       <div style="font-size:0.62rem;font-weight:700;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:1rem">Equipo Editorial</div>
       <div class="team-grid">
-        <div class="team-member"><div class="team-avatar">MA</div><div class="team-role">Editor General</div><div class="team-name">Macsi</div><div class="team-desc">Coordinación editorial y capacitación del equipo.</div></div>
-        <div class="team-member"><div class="team-avatar">SI</div><div class="team-role">Director General</div><div class="team-name">Simón</div><div class="team-desc">Revisión estricta de calidad en cada publicación.</div></div>
-        <div class="team-member"><div class="team-avatar">SE</div><div class="team-role">Dir. Creativo & Op.</div><div class="team-name">Seba</div><div class="team-desc">Retroalimentación formativa y dirección creativa.</div></div>
-        <div class="team-member"><div class="team-avatar">CR</div><div class="team-role">Periodista & Director</div><div class="team-name">Cristian</div><div class="team-desc">Producción de entrevistas y dirección editorial.</div></div>
+        <div class="team-member"><div class="team-avatar">MA</div><div class="team-role">Editor General</div><div class="team-name">Macsi</div><div class="team-desc">CoordinaciÃ³n editorial y capacitaciÃ³n del equipo.</div></div>
+        <div class="team-member"><div class="team-avatar">SI</div><div class="team-role">Director General</div><div class="team-name">SimÃ³n</div><div class="team-desc">RevisiÃ³n estricta de calidad en cada publicaciÃ³n.</div></div>
+        <div class="team-member"><div class="team-avatar">SE</div><div class="team-role">Dir. Creativo & Op.</div><div class="team-name">Seba</div><div class="team-desc">RetroalimentaciÃ³n formativa y direcciÃ³n creativa.</div></div>
+        <div class="team-member"><div class="team-avatar">CR</div><div class="team-role">Periodista & Director</div><div class="team-name">Cristian</div><div class="team-desc">ProducciÃ³n de entrevistas y direcciÃ³n editorial.</div></div>
       </div>
       <div style="margin-top:2rem;padding:1.5rem;background:var(--gray);border-left:3px solid var(--yellow)">
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:0.75rem">¿Quieres ser Postmaker?</div>
-        <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem">Buscamos redactores-diseñadores con conocimiento del trap chileno. 3-4 posts diarios bajo los estándares del medio.</p>
-        <a href="mailto:prensatrapcl@gmail.com" class="btn-primary" style="font-size:0.68rem;padding:0.55rem 1.1rem">Postularme →</a>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:0.75rem">Â¿Quieres ser Postmaker?</div>
+        <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem">Buscamos redactores-diseÃ±adores con conocimiento del trap chileno. 3-4 posts diarios bajo los estÃ¡ndares del medio.</p>
+        <a href="mailto:prensatrapcl@gmail.com" class="btn-primary" style="font-size:0.68rem;padding:0.55rem 1.1rem">Postularme â</a>
       </div>
     </div>
   </div>
@@ -570,21 +595,89 @@
 <div class="pt-divider"></div>
 
 <!-- FOOTER -->
-<footer>
+
+  <!-- INSTAGRAM FEED -->
+  <section id="instagram">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Instagram</h2>
+        <p class="section-subtitle">@prensatrapcl</p>
+      </div>
+      <div class="ig-profile">
+        <img class="ig-avatar" src="https://cdn2.behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/17841434009172496/profile.webp" alt="prensatrapcl">
+        <div class="ig-profile-info">
+          <span class="ig-username">@prensatrapcl</span>
+          <div class="ig-stats">
+            <div class="ig-stat"><span class="ig-stat-num">32.179</span><span class="ig-stat-label">Seguidores</span></div>
+            <div class="ig-stat"><span class="ig-stat-num">3.846</span><span class="ig-stat-label">Seguidos</span></div>
+          </div>
+          <p class="ig-bio">🏠 Medio Independiente 🌟&#10;🚨 Noticias sobre trap, estrenos y entretenimiento.&#10;👋 Publicidad al dm 📥</p>
+          <a class="ig-follow-btn" href="https://www.instagram.com/prensatrapcl" target="_blank" rel="noopener">Ver en Instagram &#8594;</a>
+        </div>
+      </div>
+      <div class="ig-feed-grid">
+        <a class="ig-post" href="https://www.instagram.com/p/DYF_Xd8CfiX/" target="_blank" rel="noopener">
+          <img src="https://behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/UlWnpacClUpN4I74uO0k/18230931952313528/medium.jpg" alt="Post Instagram" loading="lazy">
+          <div class="ig-post-overlay">
+            <p class="ig-post-caption">EMEDEMEA presenta “BENDITO’s”, su primer álbum de estudio y una carta de presentación desde Villa Alemana a la escena. 🇨🇱💙</p>
+          </div>
+          <span class="ig-post-type">ÁLBUM</span>
+        </a>
+        <a class="ig-post" href="https://www.instagram.com/p/DYF6nKFiVVr/" target="_blank" rel="noopener">
+          <img src="https://behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/UlWnpacClUpN4I74uO0k/18119761324580550/medium.jpg" alt="Post Instagram" loading="lazy">
+          <div class="ig-post-overlay">
+            <p class="ig-post-caption">Luego de trabajar la edición deluxe de su último proyecto discográfico “Más Roto Que Nunca”, Ober anunció el cierre de una etapa y el inicio de otra con un show en BLONDIE.</p>
+          </div>
+          <span class="ig-post-type">ÁLBUM</span>
+        </a>
+        <a class="ig-post" href="https://www.instagram.com/p/DYF0yZaCZG3/" target="_blank" rel="noopener">
+          <img src="https://behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/UlWnpacClUpN4I74uO0k/18063549449693242/medium.jpg" alt="Post Instagram" loading="lazy">
+          <div class="ig-post-overlay">
+            <p class="ig-post-caption">En su edición número 26, el festival más longevo del rap tendrá un fin de semana lleno de música con Don Toliver, Chief Keef, Playboi Carti, 2Slimey y Ken Carson.</p>
+          </div>
+          <span class="ig-post-type">ÁLBUM</span>
+        </a>
+        <a class="ig-post" href="https://www.instagram.com/p/DYDb9RiiUbp/" target="_blank" rel="noopener">
+          <img src="https://behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/UlWnpacClUpN4I74uO0k/17951372691138337/medium.jpg" alt="Post Instagram" loading="lazy">
+          <div class="ig-post-overlay">
+            <p class="ig-post-caption">Nuevos Talentos del Under: @ilfxcky 🌟 Desde Los Quillayes en la comuna de La Florida, Ignacio a.k.a Fxcky comenzó haciendo música en el colegio.</p>
+          </div>
+          <span class="ig-post-type">ÁLBUM</span>
+        </a>
+        <a class="ig-post" href="https://www.instagram.com/p/DYC6L1WCZ6a/" target="_blank" rel="noopener">
+          <img src="https://behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/UlWnpacClUpN4I74uO0k/17946083799178013/medium.jpg" alt="Post Instagram" loading="lazy">
+          <div class="ig-post-overlay">
+            <p class="ig-post-caption">Enzocerobulto llegó a Gallery Session con “Mil Flores” y dejó claro por qué está resonando su manera de hacer música por todo internet.</p>
+          </div>
+          <span class="ig-post-type">ÁLBUM</span>
+        </a>
+        <a class="ig-post" href="https://www.instagram.com/p/DYCvwmKETdu/" target="_blank" rel="noopener">
+          <img src="https://behold.pictures/6voPoIE9CnboNJ780ees0sRVpf32/UlWnpacClUpN4I74uO0k/17870305416510886/medium.jpg" alt="Post Instagram" loading="lazy">
+          <div class="ig-post-overlay">
+            <p class="ig-post-caption">Red Fingers suma un nuevo logro internacional 🏅 El productor chileno fue reconocido en los Premios ASCAP Latino.</p>
+          </div>
+          <span class="ig-post-type">ÁLBUM</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
   <div class="footer-inner">
     <div>
       <span class="footer-logo">PRENSA TRAP</span>
-      <p class="footer-tagline">El medio de comunicación de referencia del Trap chileno. Noticias, entrevistas, cobertura de shows y difusión de nuevos talentos desde Santiago.</p>
+      <p class="footer-tagline">El medio de comunicaciÃ³n de referencia del Trap chileno. Noticias, entrevistas, cobertura de shows y difusiÃ³n de nuevos talentos desde Santiago.</p>
       <a class="footer-email" href="mailto:prensatrapcl@gmail.com">prensatrapcl@gmail.com</a>
     </div>
     <div>
       <div class="footer-col-title">SECCIONES</div>
       <ul class="footer-links">
         <li><a href="#noticias">Noticias</a></li>
-        <li><a href="#galeria">Galería de Fotos</a></li>
+        <li><a href="#galeria">GalerÃ­a de Fotos</a></li>
         <li><a href="#videos">Videos en Vivo</a></li>
         <li><a href="#reels">Reels</a></li>
-        <li><a href="#musica">Música Recomendada</a></li>
+        <li><a href="#musica">MÃºsica Recomendada</a></li>
         <li><a href="#ntdu">NTDU</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
       </ul>
@@ -599,14 +692,14 @@
       </div>
       <div style="margin-top:1.5rem;padding:1rem;border:1px solid rgba(255,239,0,0.14);background:rgba(255,239,0,0.03)">
         <div style="font-size:0.58rem;font-weight:700;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:0.5rem">Servicios</div>
-        <p style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Prensa · Gestión artística · Entrevistas · Cobertura de eventos</p>
-        <a href="mailto:prensatrapcl@gmail.com" style="font-size:0.68rem;color:var(--yellow);text-decoration:none;font-weight:600;display:block;margin-top:0.5rem">Consultar →</a>
+        <p style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Prensa Â· GestiÃ³n artÃ­stica Â· Entrevistas Â· Cobertura de eventos</p>
+        <a href="mailto:prensatrapcl@gmail.com" style="font-size:0.68rem;color:var(--yellow);text-decoration:none;font-weight:600;display:block;margin-top:0.5rem">Consultar â</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2024 PrensaTrap · PRENSATRAPCL SPA · Santiago, Chile</span>
-    <span class="footer-made">Trap Chileno · Media</span>
+    <span class="footer-copy">Â© 2024 PrensaTrap Â· PRENSATRAPCL SPA Â· Santiago, Chile</span>
+    <span class="footer-made">Trap Chileno Â· Media</span>
   </div>
 </footer>
 
